@@ -17,13 +17,10 @@
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
-        #rofi
         i3blocks
-
-        #alacritty
         ranger
         feh
-        dunst
+        imagemagick
       ];
     };
   };

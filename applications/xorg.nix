@@ -4,6 +4,7 @@
   imports = [
     ./desktop-i3.nix
     ./firefox.nix
+    ./steam.nix
   ];
 
   services.xserver = {
@@ -18,9 +19,13 @@
     pulse.enable = true;
   };
   environment.systemPackages = with pkgs; [
+    prismlauncher
     pulseaudio
     discord
+    obs-studio
   ];
+
+  programs.java.enable = true;
 
   hardware = {
     opengl.enable = true;
@@ -28,19 +33,26 @@
   };
 
   fonts = {
+    fontDir.enable = true;
     fonts = with pkgs; [
       font-awesome
       cascadia-code
       noto-fonts
-      noto-fonts-cjk
+      #noto-fonts-cjk
       noto-fonts-extra
       noto-fonts-emoji
+      source-han-sans
+      source-han-mono
+      source-han-serif
     ];
     fontconfig = {
       defaultFonts = {
-        sansSerif = [ "Noto Sans" "Noto Sans CJK JP" ];
-	serif = [ "Noto Serif" "Noto Serif CJK JP" ];
-	monospace = [ "Cascadia Code" "Noto Sans Mono CJK JP" ];
+        sansSerif = [ "Noto Sans" "Source Han Sans" ];
+        #sansSerif = [ "Noto Sans" "Noto Sans CJK JP Regular" ];
+        serif = [ "Noto Serif" "Source Han Serif" ];
+        #serif = [ "Noto Serif" "Noto Sans CJK JP Regular" ];
+        monospace = [ "Cascadia Code" "Source Han Mono" ];
+        #monospace = [ "Cascadia Code" "Noto Sans Mono CJK JP Regular" ];
       };
     };
   };

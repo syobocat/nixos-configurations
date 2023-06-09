@@ -67,6 +67,10 @@ in {
         "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -SIGRTMIN+10 i3blocks";
         "XF86AudioMicMute" = "exec pactl set-source-mute @DEFAULT_SOURCE@ toggle";
 
+        "Mod4+Print" = "exec --no-startup-id \"import -window root ~/Pictures/Screenshot_$(date +%Y%m%d_%H%M%S).png\"";
+        "Mod1+Print" = "exec --no-startup-id import -window $(xprop -root | awk '$1==_\"_NET_ACTIVE_WINDOW(WINDOW):\"{print $5}') ~/Pictures/Screenshot_$(date +%Y%m%d_%H%M%S).png";
+        "--release Mod4+Shift+z" = "exec --no-startup-id \"import ~/Pictures/Screenshot_$(date +%Y%m%d_%H%M%S).png\"";
+
         "${mod}+z" = "exec ${menu}";
   	    "${mod}+${up}" = "focus up";
   	    "${mod}+${left}" = "focus left";
