@@ -6,7 +6,7 @@ in
 {
   imports = [
     (import "${home-manager}/nixos")
-    ./dotfiles
+    ./applications
   ];
 
   users.users.syobon = {

@@ -15,14 +15,27 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "NixOS";
-  # networking.networkmanager.enable = true;
 
   time.timeZone = "Asia/Tokyo";
+  i18n.defaultLocale = "ja_JP.UTF-8";
 
-  i18n.defaultLocale = "en_US.UTF-8";
+  security.sudo.enable = false;
+  security.doas = {
+    enable = true;
+    extraRules = [
+      { groups = [ "wheel" ]; noPass = true; keepEnv = true; }
+    ];
+  };
 
   system.copySystemConfiguration = true;
 
+  nixpkgs.config.allowUnfree = true;
+  
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = true;
+    channel = "https://channels.nixos.org/nixos-unstable";
+  };
 
   system.stateVersion = "23.05";
 }
