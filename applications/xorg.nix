@@ -64,5 +64,16 @@
     ];
   };
 
+  services.udisks2 = {
+    enable = true;
+    settings = {
+      "mount_options.conf" = {
+        defaults = {
+          ntfs_defaults = "uid=$UID,gid=$GID,noatime,prealloc";
+        };
+      };
+    };
+  };
+
   boot.kernelPackages = pkgs.linuxPackages_zen;
 }

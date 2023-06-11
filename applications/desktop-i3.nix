@@ -7,7 +7,6 @@
     ./picom.nix
     ./dunst.nix
     ./alacritty.nix
-    ./devmon.nix
     ./gtk.nix
   ];
 
@@ -21,6 +20,7 @@
         ranger
         feh
         imagemagick
+        udevil
       ];
     };
   };

@@ -17,6 +17,7 @@ in {
       terminal = "alacritty";
       startup = [
         { command = "fcitx5 -dr"; notification = false; }
+        { command = "devmon &"; notification = false; }
       ];
 
       defaultWorkspace = "workspace number 1";
