@@ -19,10 +19,16 @@
     pulse.enable = true;
   };
   environment.systemPackages = with pkgs; [
+    xclip
+    (ffmpeg.override { withFullDeps = true; })
     prismlauncher
     pulseaudio
     discord
     obs-studio
+    wineWowPackages.stable
+    winetricks
+    lapce
+    helix
   ];
 
   programs.java.enable = true;

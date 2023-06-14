@@ -8,6 +8,7 @@
     ./dunst.nix
     ./alacritty.nix
     ./gtk.nix
+    ./ranger.nix
   ];
 
   environment.pathsToLink = [ "/libexec" ];
