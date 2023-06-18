@@ -22,6 +22,8 @@ opt.termguicolors = true
 vim.cmd "colorscheme one"
 vim.g.one_allow_italics = 1
 
+vim.g.indentLine_setConceal = 0
+
 vim.g.airline_powerline_fonts = 1
 
 require"nvim-autopairs".setup()

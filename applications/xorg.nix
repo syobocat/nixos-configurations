@@ -2,14 +2,12 @@
 
 {
   imports = [
-    ./desktop-i3.nix
     ./firefox.nix
     ./steam.nix
   ];
 
   services.xserver = {
     enable = true;
-    videoDrivers = [ "nvidia" ];
   };
 
   services.pipewire = {
@@ -17,25 +15,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-  };
-  environment.systemPackages = with pkgs; [
-    xclip
-    (ffmpeg.override { withFullDeps = true; })
-    prismlauncher
-    pulseaudio
-    discord
-    obs-studio
-    wineWowPackages.stable
-    winetricks
-    lapce
-    helix
-  ];
-
-  programs.java.enable = true;
-
-  hardware = {
-    opengl.enable = true;
-    nvidia.modesetting.enable = true;
   };
 
   fonts = {
@@ -81,5 +60,4 @@
     };
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
 }

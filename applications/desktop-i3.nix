@@ -2,6 +2,8 @@
 
 {
   imports = [
+    ./xorg.nix
+
     ./i3.nix
     ./rofi.nix
     ./picom.nix
@@ -22,6 +24,10 @@
         feh
         imagemagick
         udevil
+        pulseaudio
+        xclip
+        (ffmpeg.override { withFullDeps = true; })
+        unzipNLS
       ];
     };
   };
