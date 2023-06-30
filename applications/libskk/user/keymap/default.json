@@ -1,0 +1,15 @@
+{
+    "define": {
+        "keymap": {
+            "\n": "commit-unhandled",
+            "\b": "delete",
+            "/": "abbrev",
+            " ": "next-candidate",
+            "\t": "complete",
+            "x": "previous-candidate",
+            "X": "purge-candidate",
+            "Right": "expand-preedit",
+            "Left": "shrink-preedit"
+        }
+    }
+}

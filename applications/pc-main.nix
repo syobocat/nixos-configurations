@@ -16,6 +16,11 @@
     nvidia.modesetting.enable = true;
   };
 
+  fileSystems."/storage" = {
+    device = "/dev/disk/by-uuid/2b5f6527-7b8b-4fa9-8efe-a5243d77b621";
+    fsType = "btrfs";
+  };
+
   environment.systemPackages = with pkgs; [
     prismlauncher
     osu-lazer-bin
@@ -34,6 +39,7 @@
     rust-analyzer
     clippy
     cargo
+    godot_4
   ];
 
   virtualisation.libvirtd.enable = true;

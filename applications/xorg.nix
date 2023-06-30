@@ -4,6 +4,7 @@
   imports = [
     ./firefox.nix
     ./steam.nix
+    ./libskk.nix
   ];
 
   services.xserver = {

@@ -30,11 +30,12 @@
   system.copySystemConfiguration = true;
 
   nixpkgs.config.allowUnfree = true;
+
+  nix.settings.auto-optimise-store = true;
   
   system.autoUpgrade = {
     enable = true;
     allowReboot = true;
-    channel = "https://channels.nixos.org/nixos-unstable";
   };
 
   system.stateVersion = "23.05";

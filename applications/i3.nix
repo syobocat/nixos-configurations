@@ -2,10 +2,10 @@
 
 let
   mod = "Mod4";
-  up = "w";
-  left = "a";
+  up = "p";
+  left = "u";
   down = "o";
-  right = "e";
+  right = "i";
   menu = "\"rofi -show drun\"";
 in {
   home-manager.users.syobon.xsession.windowManager.i3 = {
@@ -18,13 +18,14 @@ in {
       startup = [
         { command = "fcitx5 -dr"; notification = false; }
         { command = "devmon &"; notification = false; }
+        { command = "xrandr --output DP-0 --auto --pos 0x0 --primary --output HDMI-0 --auto --rotate left --pos 1920x70"; notification = false; }
       ];
 
       defaultWorkspace = "workspace number 1";
 
       gaps = {
         inner = 10;
-	    smartGaps = true;
+	      smartGaps = true;
       };
 
       window = {
@@ -43,9 +44,9 @@ in {
         position = "top";
         mode = "dock";
         fonts = {
-	      names = [ "Cascadia Code" "Noto Sans Mono CJK JP" ];
-	      size = 11.0;
-	    };
+          names = [ "Cascadia Code" "Noto Sans Mono CJK JP" ];
+          size = 11.0;
+	      };
         colors = {
           background = "#181c24";
           focusedWorkspace = {
@@ -75,8 +76,8 @@ in {
         "${mod}+z" = "exec ${menu}";
   	    "${mod}+${up}" = "focus up";
   	    "${mod}+${left}" = "focus left";
-	    "${mod}+${down}" = "focus down";
-	    "${mod}+${right}" = "focus right";
+	      "${mod}+${down}" = "focus down";
+	      "${mod}+${right}" = "focus right";
 	
         "${mod}+Shift+${up}" = "move up";
         "${mod}+Shift+${left}" = "move left";
@@ -86,7 +87,7 @@ in {
       modes = {
         resize = {
 	  
-	    };
+	      };
       };
     };
   };
