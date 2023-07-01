@@ -16,8 +16,6 @@
   };
   home-manager.users.syobon.programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
-    enableSyntaxHighlighting = true;
     dotDir = ".config/zsh";
     
     initExtra = ''
@@ -30,5 +28,5 @@
     '';
   };
 
-  users.users.syobon.shell = pkgs.zsh;
+  users.defaultUserShell = pkgs.zsh;
 }

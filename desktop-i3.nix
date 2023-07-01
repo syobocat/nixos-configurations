@@ -2,15 +2,15 @@
 
 {
   imports = [
-    ./xorg.nix
+    ./desktop.nix
 
-    ./i3.nix
-    ./rofi.nix
-    ./picom.nix
-    ./dunst.nix
-    ./alacritty.nix
-    ./gtk.nix
-    ./ranger.nix
+    ./applications/i3.nix
+    ./applications/rofi.nix
+    ./applications/picom.nix
+    ./applications/dunst.nix
+    ./applications/alacritty.nix
+    ./applications/gtk.nix
+    ./applications/ranger.nix
   ];
 
   environment.pathsToLink = [ "/libexec" ];
@@ -33,7 +33,7 @@
   };
 
   home-manager.users.syobon.xdg.configFile = {
-    "i3blocks/config".source = ./i3blocks/config;
-    "i3blocks/volume.sh".source = ./i3blocks/volume.sh;
+    "i3blocks/config".source = ./applications/i3blocks/config;
+    "i3blocks/volume.sh".source = ./applications/i3blocks/volume.sh;
   };
 }

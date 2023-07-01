@@ -2,9 +2,8 @@
 
 {
   imports = [
-    ./firefox.nix
-    ./steam.nix
-    ./libskk.nix
+    ./applications/firefox.nix
+    ./applications/libskk.nix
   ];
 
   services.xserver = {

@@ -6,16 +6,16 @@
       colors = {
         primary = {
           background = "#282c34";
-	  foreground = "#abb2bf";
+          foreground = "#abb2bf";
         };
-	cursor = {
-	  text = "CellBackground";
-	  cursor = "#528bff";
-	};
-	selection = {
-	  text = "CellForeground";
-	  background = "#3e4451";
-	};
+        cursor = {
+	        text = "CellBackground";
+          cursor = "#528bff";
+        };
+        selection = {
+	        text = "CellForeground";
+          background = "#3e4451";
+        };
         normal = {
           black = "#5c6370";
           red = "#e06c75";

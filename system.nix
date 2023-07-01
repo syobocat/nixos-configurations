@@ -14,10 +14,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "NixOS";
-
   time.timeZone = "Asia/Tokyo";
   i18n.defaultLocale = "ja_JP.UTF-8";
+
+  users.mutableUsers = false;
 
   security.sudo.enable = false;
   security.doas = {
@@ -33,10 +33,5 @@
 
   nix.settings.auto-optimise-store = true;
   
-  system.autoUpgrade = {
-    enable = true;
-    allowReboot = true;
-  };
-
-  system.stateVersion = "23.05";
+  system.autoUpgrade.enable = true;
 }

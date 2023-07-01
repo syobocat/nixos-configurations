@@ -1,25 +1,20 @@
-{ config, pkgs, ...}:
+{ config, pkgs, ... }:
 
+let
+  user = home-manager.users.syobon;
+in
 {
   imports = [
+    ./pc-main.nix
+    ./user-syobon-full.nix
     ./desktop-i3.nix
+
+    ./applications/zsh.nix
+    ./applications/neovim.nix
+    ./applications/helix.nix
+
+    ./applications/steam.nix
   ];
-
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-
-  services.xserver = {
-    videoDrivers = [ "nvidia" ];
-  };
-
-  hardware = {
-    opengl.enable = true;
-    nvidia.modesetting.enable = true;
-  };
-
-  fileSystems."/storage" = {
-    device = "/dev/disk/by-uuid/2b5f6527-7b8b-4fa9-8efe-a5243d77b621";
-    fsType = "btrfs";
-  };
 
   environment.systemPackages = with pkgs; [
     prismlauncher
