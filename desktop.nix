@@ -6,10 +6,6 @@
     ./applications/libskk.nix
   ];
 
-  services.xserver = {
-    enable = true;
-  };
-
   services.pipewire = {
     enable = true;
     alsa.enable = true;

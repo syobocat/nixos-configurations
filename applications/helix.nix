@@ -1,4 +1,7 @@
+{ config, pkgs, ... }:
+
 {
+  environment.systemPackages = with pkgs; [ helix ];
   home-manager.users.syobon.programs.helix = {
     enable = true;
     settings = {

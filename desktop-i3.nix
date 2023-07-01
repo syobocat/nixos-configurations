@@ -15,12 +15,12 @@
 
   environment.pathsToLink = [ "/libexec" ];
   services.xserver = {
+    enable = true;
     desktopManager.xterm.enable = false;
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
         i3blocks
-        ranger
         feh
         imagemagick
         udevil

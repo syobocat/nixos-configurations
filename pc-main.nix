@@ -17,6 +17,8 @@
     nvidia.modesetting.enable = true;
   };
 
+  programs.hyprland.nvidiaPatches = true;
+
   fileSystems."/storage" = {
     device = "/dev/disk/by-uuid/2b5f6527-7b8b-4fa9-8efe-a5243d77b621";
     fsType = "btrfs";

@@ -3,7 +3,7 @@
 {
   users.users.syobon = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" ];
+    extraGroups = [ "wheel" "video" "libvirtd" ];
     hashedPassword = "$y$j9T$0kIQREzeED72PjVpkkNxi.$KW4krUcKgfkLMOr9b/P27jJ3z.yjuOIh6eNY30ohiH6";
   };
 
