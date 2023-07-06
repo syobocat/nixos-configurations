@@ -8,7 +8,7 @@
     ./applications/waybar.nix
     ./applications/dunst.nix
     ./applications/alacritty.nix
-#    ./applications/gtk.nix
+    ./applications/gtk.nix
     ./applications/ranger.nix
   ];
 
@@ -16,7 +16,11 @@
     enable = true;
   };
 
-  environment.loginShellInit = "Hyprland";
+  environment.loginShellInit = ''
+    if [ -z "''${DISPLAY}" ]; then
+      exec Hyprland
+    fi
+  '';
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   environment.systemPackages = with pkgs; [
