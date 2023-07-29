@@ -16,7 +16,7 @@
     enable = true;
   };
 
-  environment.loginShellInit = ''
+  programs.zsh.loginShellInit = ''
     if [ -z "''${DISPLAY}" ]; then
       exec Hyprland
     fi
@@ -25,6 +25,7 @@
 
   environment.systemPackages = with pkgs; [
     sway-contrib.grimshot
+    wl-clipboard
     nomacs
     pulseaudio
     udevil

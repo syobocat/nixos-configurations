@@ -1,13 +1,10 @@
 { config, pkgs, ... }:
 
-let
-  user = home-manager.users.syobon;
-in
 {
   imports = [
     ./pc-main.nix
     ./user-syobon-full.nix
-    ./desktop-i3.nix
+    ./desktop-hyprland.nix
 
     ./applications/zsh.nix
     ./applications/neovim.nix
@@ -29,16 +26,16 @@ in
     helix
     texlive.combined.scheme-full
     libreoffice-fresh
-    rustc
-    rustfmt
-    rust-analyzer
-    clippy
     cargo
     godot_4
+    musescore
+    calibre
   ];
 
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
 
   programs.java.enable = true;
+
+  services.logind.extraConfig = "RuntimeDirectorySize=1024M";
 }

@@ -6,6 +6,10 @@
 
   networking.hostName = "NixOS";
 
+  networking.hosts = {
+    "192.168.0.150" = [ "cloud.syobon.net" "minecraft.syo.bar" ];
+  };
+
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   services.xserver = {
@@ -23,4 +27,6 @@
     device = "/dev/disk/by-uuid/2b5f6527-7b8b-4fa9-8efe-a5243d77b621";
     fsType = "btrfs";
   };
+
+  virtualisation.podman.enable = true;
 }

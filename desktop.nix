@@ -19,7 +19,8 @@
       font-awesome
       cascadia-code
       noto-fonts
-      #noto-fonts-cjk
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
       noto-fonts-extra
       noto-fonts-emoji
       source-han-sans
@@ -50,7 +51,7 @@
     settings = {
       "mount_options.conf" = {
         defaults = {
-          ntfs_defaults = "uid=$UID,gid=$GID,noatime,prealloc";
+          ntfs_defaults = "uid=$UID,gid=$GID,noatime";
         };
       };
     };
